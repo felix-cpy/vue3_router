@@ -1,4 +1,9 @@
 <template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/testcomputed" >Try computed values</router-link>
+  </nav>
   <router-view />
 </template>
 
@@ -6,7 +11,7 @@
 // import HelloWorldVue from "./pages/HelloWorld.vue";
 
 export default {
-  name: "App",
+  name: "App"
   // components: {
   //   HelloWorld: HelloWorldVue,
   // },
