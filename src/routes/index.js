@@ -1,21 +1,23 @@
 import { createWebHistory } from "vue-router";
 import { createRouter } from "vue-router";
 import Home from "../pages/HelloWorld.vue";
-// import About2 from "../pages/About.vue";
 
 const routes = [
   {
     path: "/",
-    component: <Home msg="Hello Vue 3 in CodeSandbox!" />
+    component: <Home msg="Hello Vue 3 in CodeSandbox!" />,
+    name: "home"
   },
   {
-    path: "/about",
-    // component: About2
+    path: "/about-us",
+    name: "about",
     component: () => import("../pages/About.vue")
   },
   {
-    path: "/testcomputed"
-    , component: ()=>import("../pages/TestComputed.vue")
+    path: "/testcomputed",
+    component: () => import("../pages/TestComputed.vue"),
+    name: "testComputedProp",
+    props: true
   }
 ];
 
