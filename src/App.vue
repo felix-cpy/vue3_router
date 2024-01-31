@@ -10,8 +10,12 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/testcomputed" >Try computed values</router-link> -->
     <br />
-    <a href="/">Home Reload </a>
-    <p>(use a tag instead of router-link, vue does NOT intercept this route)</p>
+    <div style="border: 1px dashed purple ; margin-top: 10px">
+      <a href="/">Home Reload </a>
+      <p>
+        (use a tag instead of router-link, vue does NOT intercept this route)
+      </p>
+    </div>
   </nav>
   <router-view />
 </template>
