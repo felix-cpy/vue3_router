@@ -1,9 +1,19 @@
 <template>
   <div class="computedDiv">
     <label for="">Enter a number</label>
-    <input type="text" @keyup="isInputANum" v-model="inputTxt" />
+    <input
+      :class="{ notNum: inputIsNum === false }"
+      type="text"
+      @keyup="isInputANum"
+      v-model="inputTxt"
+    />
     <!-- v-model="inputTxt" > -->
-    <p>{{ inputTxt }} is a number : {{ inputIsNum }}</p>
+    <p
+      :class="{ notNum: inputIsNum === false }"
+      v-show="inputIsNum !== undefined"
+    >
+      {{ inputTxt }} is a number : {{ inputIsNum }}
+    </p>
   </div>
 </template>
 
@@ -11,7 +21,7 @@
 export default {
   data: () => {
     return {
-      inputTxt: "",
+      inputTxt: ""
       // , inputIsNum: undefined
     };
   },
@@ -21,8 +31,8 @@ export default {
         return undefined;
       }
       return !isNaN(this.inputTxt);
-    },
-  },
+    }
+  }
   // , methods: {
   //     isInputANum(){
   //         this.inputIsNum  =  !isNaN (this.inputTxt)
@@ -38,5 +48,11 @@ export default {
   font-weight: 600;
   display: inline-block;
   align-items: center;
+}
+input.notNum {
+  background-color: pink;
+}
+p.notNum {
+  color: red;
 }
 </style>
