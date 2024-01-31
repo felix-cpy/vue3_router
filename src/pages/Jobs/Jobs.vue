@@ -1,7 +1,18 @@
 <template>
   <h2>This is a sample list of jobs</h2>
   <div v-for="job in jobsList" :key="job.id">
-    <h4>{{ job.title }}</h4>
+    <!-- params: passed to the route id as well as props of the component -->
+    <router-link
+      :to="{
+        name: 'jobDetails',
+        params: { rid: job.id + 1 },
+        props: { id: job.id, title: job.title }
+      }"
+    >
+      <h4>
+        {{ job.title }}
+      </h4>
+    </router-link>
   </div>
 </template>
 
@@ -11,11 +22,11 @@ export default {
   data() {
     return {
       jobsList: [
-        { title: "butcher", id: 1 },
-        { title: "sous chef", id: 2 },
-        { title: "pastry chef", id: 3 },
-        { title: "line chef", id: 4 },
-        { title: "server", id: 5 }
+        { title: "butcher", id: 0 },
+        { title: "sous chef", id: 1 },
+        { title: "pastry chef", id: 2 },
+        { title: "line chef", id: 3 },
+        { title: "server", id: 4 }
       ]
     };
   }

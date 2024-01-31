@@ -24,6 +24,12 @@ const routes = [
     path: "/jobs",
     name: "jobs",
     component: () => import("../pages/Jobs/Jobs.vue")
+  },
+  {
+    path: "/jobs/:rid",
+    name: "jobDetails",
+    component: () => import("../pages/Jobs/JobsDetail.vue"),
+    props: true
   }
 ];
 
