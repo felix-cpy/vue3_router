@@ -19,6 +19,11 @@ const routes = [
     component: () => import("../pages/TestComputed.vue"),
     name: "testComputedProp",
     props: true
+  },
+  {
+    path: "/jobs",
+    name: "jobs",
+    component: () => import("../pages/Jobs/Jobs.vue")
   }
 ];
 
