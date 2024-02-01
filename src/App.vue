@@ -21,6 +21,11 @@
       </p>
     </div>
   </nav>
+  <div class="nav-button-container">
+    <button @click="goHome">Go Home</button>
+    <button @click="goBack">Go Back</button>
+    <button @click="goForward">Go Forward</button>
+  </div>
   <router-view />
 </template>
 
@@ -28,10 +33,22 @@
 // import HelloWorldVue from "./pages/HelloWorld.vue";
 
 export default {
-  name: "App"
+  name: "App",
   // components: {
   //   HelloWorld: HelloWorldVue,
   // },
+  methods: {
+    goHome() {
+      this.$router.push({ name: "home" });
+    },
+    goBack() {
+      console.log(this.$router);
+      this.$router.go(-1);
+    },
+    goForward() {
+      this.$router.go(1);
+    }
+  }
 };
 </script>
 
@@ -43,5 +60,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.nav-button-container button {
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: lightblue;
+}
+.nav-button-container button:hover {
+  background-color: lightgray;
+  color: #2c3e50;
 }
 </style>
