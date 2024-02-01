@@ -32,6 +32,11 @@ const routes = [
     name: "jobDetails",
     component: () => import("../pages/Jobs/JobsDetail.vue"),
     props: true
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "notFound",
+    component: () => import("../pages/NotFound.vue")
   }
 ];
 
