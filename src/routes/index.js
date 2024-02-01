@@ -26,7 +26,9 @@ const routes = [
     component: () => import("../pages/Jobs/Jobs.vue")
   },
   {
-    path: "/jobs/:rid",
+    // https://router.vuejs.org/guide/essentials/passing-props
+    // prop named MUST BE exactly like the route param
+    path: "/jobs/:id",
     name: "jobDetails",
     component: () => import("../pages/Jobs/JobsDetail.vue"),
     props: true

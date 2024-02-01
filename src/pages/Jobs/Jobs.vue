@@ -5,8 +5,7 @@
     <router-link
       :to="{
         name: 'jobDetails',
-        params: { rid: job.id + 1 },
-        props: { id: job.id, title: job.title }
+        params: { id: job.id + 1 }
       }"
     >
       <h4>
